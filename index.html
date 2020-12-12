@@ -1,0 +1,153 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virus Game</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container-fluid">
+    
+    <div class="row customrow">
+      <div class="col pt-5 pl-5">
+        <h3 class="p-2 bg-light instance rounded">Instances: <span id='instances'></span></h3>    
+      </div>
+    </div>
+    <div class="row customheight">
+      <div class="col-12 d-flex justify-content-center align-items-center">
+        <div class="text-center text-light fa-spin">
+          <i class="fas fa-virus" onclick="addInstance()"></i>
+        </div>   
+      </div>
+    </div>
+  </main>
+  <article class="container-fluid bg-dark hidden" id="inventory">
+    <div class="row">
+      <div class="col text-light pt-3 d-flex flex-row justify-content-around">
+        <button type="button" class="btn btn-light" onclick="switchMenus()">Inventory</button>
+        <button type="button" class="btn btn-dark" onclick="switchMenus()">Shop</button>
+      </div>
+      
+    </div>
+    <div class="row bg-light cusheight2">
+      <div class="col-6 d-flex justify-content-around align-items-center" >
+        <button class="btn btn-dark upgrade d-flex flex-column justify-content-around align-items-center">
+          upgrade1
+          <div>
+            <h5 id="upgrade1num">0</h5>
+          </div>
+        </button>
+        <button class="btn btn-dark upgrade d-flex flex-column justify-content-around align-items-center">
+          upgrade2
+          <div>
+            <h5 id="upgrade2num">0</h5>
+          </div>
+        </button>
+        <button class="btn btn-dark upgrade d-flex flex-column justify-content-around align-items-center">
+          upgrade3
+          <div>
+            <h5 id="upgrade3num">0</h5>
+          </div>
+        </button>
+
+      </div>
+      <div class="col-6 d-flex justify-content-around align-items-center">
+        <button class="btn btn-dark upgrade d-flex flex-column justify-content-around align-items-center">
+          <div>
+            <i class="fas fa-fish display-3"></i>
+          </div>
+          Phishing
+          <div>
+            <h5 id="phishingnum">0</h5>
+          </div>
+        </button>
+        <button class="btn btn-dark upgrade d-flex flex-column justify-content-around align-items-center">
+          <div>
+            <i class="fas fa-desktop display-3"></i>
+          </div>
+          Hackers
+          <div>
+            <h5 id="hackernum">0</h5>
+          </div>
+        </button>
+        <button class="btn btn-dark upgrade d-flex flex-column justify-content-around align-items-center">
+          <div>
+            <i class="fas fa-camera display-3"></i>
+          </div>
+          NSA Tech
+          <div>
+            <h5 id="nsatechnum">0</h5>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </article>
+  <footer class="container-fluid bg-light" id="shop">
+    <div class="row">
+      <div class="col pt-3 d-flex flex-row justify-content-around">
+        <button type="button" class="btn btn-light border" onclick="switchMenus()">Inventory</button>
+        <button type="button" class="btn btn-dark" onclick="switchMenus()">Shop</button>
+      </div>
+    </div>
+    <div class="row bg-dark cusheight2">
+      <div class="col-6 d-flex justify-content-around align-items-center">
+        <button type="button" class="btn btn-success upgrade d-flex flex-column justify-content-around align-items-center" onclick="clickUpgrade('upgrade1', 'upgrade1num')">
+          upgrade1
+          <div>
+            <h5 id="upgrade1">5</h5>
+          </div>
+        </button>
+        <button type="button" class="btn btn-success upgrade d-flex flex-column justify-content-around align-items-center" onclick="clickUpgrade('upgrade2', 'upgrade2num')">
+          upgrade2
+          <div>
+            <h5 id="upgrade2">300</h5>
+          </div>
+        </button>
+        <button type="button" class="btn btn-success upgrade d-flex flex-column justify-content-around align-items-center" onclick="clickUpgrade('upgrade3', 'upgrade3num')">
+          upgrade3
+          <div>
+            <h5 id="upgrade3">3000</h5>
+          </div>
+        </button>
+      </div>
+      <div class="col-6 d-flex justify-content-around align-items-center">
+        <button type="button" class="btn btn-success upgrade d-flex flex-column justify-content-around align-items-center" onclick="addUpgrade('phishing', 'phishingnum')">
+          <div>
+            <i class="fas fa-fish display-3"></i>
+          </div>
+          Phishing
+          <div>
+            <h5 id="phishing">20</h5>
+          </div>
+        </button>
+        <button type="button" class="btn btn-success upgrade d-flex flex-column justify-content-around align-items-center" onclick="addUpgrade('hacker', 'hackernum')">
+          <div>
+            <i class="fas fa-desktop display-3"></i>
+          </div>
+          Hackers
+          <div>
+            <h5 id="hacker">500</h5>
+          </div>
+        </button>
+        <button type="button" class="btn btn-success upgrade d-flex flex-column justify-content-around align-items-center "onclick="addUpgrade('nsatech', 'nsatechnum')">
+          <div>
+            <i class="fas fa-camera display-3"></i>
+          </div>
+          NSA Tech
+          <div>
+            <h5 id="nsatech">10000</h5>
+          </div>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="app.js"></script>
+</body>
+</html>

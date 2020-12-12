@@ -1,0 +1,44 @@
+body {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Press Start 2P', cursive;
+}
+main{
+  flex-grow: 1;
+  background-image: url('https://i.pinimg.com/originals/30/09/e7/3009e722ec057ffab1e41d2f993385d1.png');
+}
+footer, article{
+  height: 35vh;
+}
+i{
+  font-size: 300px;
+}
+.instance{
+  width: fit-content;
+  user-select: none;
+}
+.hidden{
+  display: none;
+}
+.customheight{
+  height: 27.9em;
+}
+.cusheight2{
+  height: 285px;
+}
+.btn{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.upgrade{
+  height: 200px;
+}
+.fa-spin{
+  animation-duration: 4s;
+}
+.border {
+  border-top: 2px black solid !important;
+  border-right: 2px black solid !important;
+  border-left: 2px black solid !important;
+}
