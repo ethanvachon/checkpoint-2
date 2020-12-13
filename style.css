@@ -8,6 +8,9 @@ main{
   flex-grow: 1;
   background-image: url('https://i.pinimg.com/originals/30/09/e7/3009e722ec057ffab1e41d2f993385d1.png');
 }
+p{
+  font-size: smaller;
+}
 footer, article{
   height: 35vh;
 }
@@ -19,15 +22,15 @@ i{
   user-select: none;
 }
 .hidden{
-  display: none;
+  display: none !important;
 }
 .customheight{
-  height: 27.9em;
+  height: 50.1vh;
 }
 .cusheight2{
-  height: 285px;
+  height: 31.9vh
 }
-.btn{
+.menu{
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
