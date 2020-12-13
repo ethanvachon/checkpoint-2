@@ -2,6 +2,7 @@ let instances = 0
 let clickMultiplier= 1
 let autoClick = 0
 let shopDisplay = true
+let achievement1 = false
 
 let upgradeLibrary = {
   phishing: {
@@ -113,6 +114,12 @@ function loadPlayer(){
   // upgradeLibrary = JSON.parse(window.localStorage.getItem('upgradeLibrary'))
   // upgradeClick = JSON.parse(window.localStorage.getItem('upgradeClick'))
 }
+function achievementCheck (){
+  if (instances >= 1000000 && achievement1 == false){
+    alert('ACHIEVEMENT UNLOCKED: MILLIONAIRE')
+    achievement1 = true
+  }
+}
 loadPlayer()
 
 
@@ -127,4 +134,5 @@ setInterval(() => {
   clickCheckInstances('upgrade2id', 'upgrade2')
   clickCheckInstances('upgrade3id', 'upgrade3')
   savePlayer()
+  achievementCheck()
 }, 5000);
