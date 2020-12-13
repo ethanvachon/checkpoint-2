@@ -107,7 +107,9 @@ function savePlayer() {
 function loadPlayer(){
   instances = JSON.parse(window.localStorage.getItem('instances'))
   autoClick = JSON.parse(window.localStorage.getItem('autoClick'))
-  clickMultiplier = JSON.parse(window.localStorage.getItem('clickMultiplier'))
+  if(JSON.parse(window.localStorage.getItem('clickMultiplier'))){
+    clickMultiplier = JSON.parse(window.localStorage.getItem('clickMultiplier'))
+  }
   // upgradeLibrary = JSON.parse(window.localStorage.getItem('upgradeLibrary'))
   // upgradeClick = JSON.parse(window.localStorage.getItem('upgradeClick'))
 }
