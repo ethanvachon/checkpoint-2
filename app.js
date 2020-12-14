@@ -2,7 +2,10 @@ let instances = 0
 let clickMultiplier= 1
 let autoClick = 0
 let shopDisplay = true
+
+//Keeps track of if achievements have been earned
 let achievement1 = false
+let achievement2 = false
 
 let upgradeLibrary = {
   phishing: {
@@ -119,15 +122,21 @@ function achievementCheck (){
     alert('ACHIEVEMENT UNLOCKED: MILLIONAIRE')
     achievement1 = true
   }
+  if(upgradeLibrary.phishing.quantity >= 1 && upgradeLibrary.hacker.quantity >= 1 && upgradeLibrary.nsatech.quantity >= 1 && upgradeClick.upgrade1.quantity >= 1 && upgradeClick.upgrade2.quantity >= 1 && upgradeClick.upgrade3.quantity >= 1 && achievement2 == false){
+    alert('ACHIEVEMENT UNLOCKED: ONE OF EACH')
+    achievement2 = true
+  }
 }
 loadPlayer()
 
-
+//adds instances from auto upgrades
 setInterval(() => {
   instances += Math.ceil(autoClick / 2)
   drawInstances()
 }, 500);
 
+
+//checks to add upgrade or achievement 
 setInterval(() => {
   autoCheckInstances('hackerid', 'hacker')
   autoCheckInstances('nsatechid', 'nsatech')
@@ -135,4 +144,4 @@ setInterval(() => {
   clickCheckInstances('upgrade3id', 'upgrade3')
   savePlayer()
   achievementCheck()
-}, 5000);
+}, 3000);
